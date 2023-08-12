@@ -20,10 +20,10 @@ timezone: Asia/Singapore
 
 title: Chan Jian Le                          # the main title
 
-tagline: software engineer, vim enthusiast, love random funny things...occasionally nerdy. # it will display as the sub-title
+tagline: software engineer, vim enthusiast, love random funny things, occasionally nerdy. # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  software engineer, vim enthusiast, love random funny things...occasionally nerdy.
+  software engineer, vim enthusiast, love random funny things, occasionally nerdy.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://brucechanjianle.github.io"
