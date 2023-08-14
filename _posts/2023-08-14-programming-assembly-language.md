@@ -1,6 +1,6 @@
 ---
 title: Notes on Assembly Language
-author: Chan Jian Le
+author: cjl
 date: 2023-08-14 21:50:27 +0800
 categories: [Programming]
 tags: [programming]
@@ -35,3 +35,5 @@ Therefore, a proper squence would be:
 1. CPU executes it :D
 
 [Fun fact](https://www.youtube.com/watch?v=fpnE6UAfbtU&ab_channel=CrashCourse): a `register` is a group of latches which holds a single number. The number of bits in a register is called its `width`.
+
+Draw this diagram combine with the LK one (https://www.youtube.com/watch?v=Zr8WKIOIKsk&ab_channel=ALLABOUTELECTRONICS)
