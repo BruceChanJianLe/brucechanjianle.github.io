@@ -36,5 +36,5 @@ Therefore, a proper squence would be:
 
 [Fun fact](https://www.youtube.com/watch?v=fpnE6UAfbtU&ab_channel=CrashCourse): a `register` is a group of latches which holds a single number. The number of bits in a register is called its `width`.
 
-![processing model](/resources/2023-08-14-programming-assembly-language/processing_model.png)
+![processing model](/resources/2023-08-14-programming-assembly-language/processing_model.svg)
 _An overview_
