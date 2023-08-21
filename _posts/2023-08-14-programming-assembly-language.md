@@ -44,13 +44,13 @@ Type of assemblers:
 - MASM32 SDK project (a project developed based on Microsoft MASM32 but a simpler version)
 - GoAsm
 
-Instruction Categories:
+Basic Instruction Categories:
 - Load and store: These instructions move data between registers and memory locations. These include basic move and store instructions and some more esoteric instructions such as sign extensions as well as data exchange instructions.
 - Computational: This is the set of instructions used to add, subtract, multiply and divide which provide the computational capability of the chip. Including signed and unsigned operations Packed Decimal Format operations, floating point operations, increment and decrement operations.
 - Logical: These are bit wise or logical operations. They are special forms of manipulation at the bit level such as shifting, adding or calling, etc. They are used for a variety of purposes including extracting parts of a memory location a process known as masking.
 - Control flow: This category is that involving instructions which change the flow of execution of the programme. The most basic form of coding is to perform an instruction move to the next sequential instruction location and perform that instruction. However, we also need to make decision on whether to move to the next instruction or to take an alternative path. We do this using a set of instructions which change the control flow. This include if statements, looping instrctions and sub programme calls.
 
-Advance Categories:
+Advance Instruction Categories:
 - Advance Encryption Standard (AES)
 - 128-bit packed decimal instructions
 - 256-bit and move vector instructions
