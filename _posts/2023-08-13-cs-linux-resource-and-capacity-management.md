@@ -32,6 +32,7 @@ Where `bpytop` is the python version of the project.
 All of them are available on Ubuntu 22.04.
 
 USAGE: (top)
+
 Shortcut | Description
 --- | ---
 F | re-arrange the monitoring columns
@@ -54,8 +55,6 @@ sudo apt install bpytop
 For monitoring CPU resource over a period of time.
 We have a tool called `sar` which stands for System Activity Report.
 This tool can monitor more than just CPU resources which we will see soon!
-
-
 
 USAGE: (sar)
 
