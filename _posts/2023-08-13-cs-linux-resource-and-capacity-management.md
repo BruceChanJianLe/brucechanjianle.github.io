@@ -32,8 +32,12 @@ Where `bpytop` is the python version of the project.
 All of them are available on Ubuntu 22.04.
 
 USAGE: (top)
-Shift + F to re-arrange the monitoring columns.
-z to enter color mode.
+Shortcut | Description
+--- | ---
+F | re-arrange the monitoring columns
+M | monitor by memory
+m | toggle visualization of memory
+z | toggle color mode
 
 INSTALLING:
 ```bash
