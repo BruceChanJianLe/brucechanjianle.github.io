@@ -218,12 +218,12 @@ Reading log files
 ```bash
 # URB(A)N, this is just a mnemonic
 # U - CPU
-# R - RAM
-# B - BYTE
-# N - NETWORK
 sar -u
+# R - RAM
 sar -r
+# B - BYTE
 sar -b
+# N - NETWORK
 sar -n # This needs to be configured
 ```
 
@@ -245,3 +245,5 @@ INSTALLING:
 # System activity report
 sudo apt install sysstat
 ```
+
+That's all for now, let's continue exploring RAM in the next article!
