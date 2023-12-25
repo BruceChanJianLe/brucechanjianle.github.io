@@ -1,5 +1,5 @@
 ---
-title: Linux Resource and Capacity Management
+title: Linux Resource and Capacity Management (Part 1)
 author: cjl
 date: 2023-08-13 08:56:55 +0800
 categories: [CS]
