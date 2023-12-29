@@ -189,7 +189,7 @@ Average:     all    0.51    0.00    0.30    0.00    0.00    0.02    0.00    0.00
 So for testing, you might want to run the critical application.
 And then start `mpstat` at 1 second intervals.
 
-## Over Time CPU Monitoring
+## Over Time (Historical) CPU Monitoring
 
 For monitoring CPU resource over a period of time.
 We have a tool called `sar` which stands for System Activity Report.
