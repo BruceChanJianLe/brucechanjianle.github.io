@@ -212,4 +212,4 @@ you should use any tools that is at your disposal. Try new things,
 do not be afraid of the command lines, hard things, or things that
 seems hard at first glance can be very benefitial for the long run.
 
-Anyways, good luck on your journey of capacity and resource planning
+Anyways, good luck on your journey of capacity and resource planning!
