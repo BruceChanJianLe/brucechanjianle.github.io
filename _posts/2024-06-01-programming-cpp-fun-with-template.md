@@ -81,7 +81,7 @@ int main()
 }
 ```
 
-### Code Analysis
+#### Code Analysis
 
 Let's compare the snippet of code and its corresponding insights when
 there are 7 inputs.
@@ -341,7 +341,7 @@ int main()
 }
 ```
 
-### Conclusion
+#### Conclusion
 
 From the code insights, fold expressions will only generate the relavant code
 for the printing. On the other hand, template without fold expression will
