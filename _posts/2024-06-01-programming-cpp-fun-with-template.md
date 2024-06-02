@@ -94,9 +94,6 @@ Let's compare the snippet of code and its corresponding insights.
   <tr>
     <td>
       <pre><code class="language-cpp">
-#include <string>
-#include <iostream>
-
 int index = 0;
 
 template <typename T>
