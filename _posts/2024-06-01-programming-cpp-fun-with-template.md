@@ -94,36 +94,8 @@ Let's compare the snippet of code and its corresponding insights.
   <tr>
     <td>
       <pre><code class="language-cpp">
-#include <string>
-#include <iostream>
-
-int index = 0;
-
-template <typename T>
-std::string printCloud(const T& msg)
-{
-  return "cloud " + std::to_string(index--) + std::string{" size "} + std::to_string(msg) + std::string{", "};
-}
-
-// Base case
-std::string printClouds()
-{
-  return {};
-}
-
-template <typename T, typename... Args>
-std::string printClouds(const T& msg, const Args&... args)
-{
-  // increment index
-  index++;
-  return printCloud(msg) + printClouds(args...);
-}
-
-int main()
-{
-  std::cout << "result string: " << printClouds(100, 200, 12, 11, 5, 6, 7) << "\n";
-  return EXIT_SUCCESS;
-}</code></pre>
+int main
+</code></pre>
     </td>
     <td>
       <pre><code class="language-cpp">
