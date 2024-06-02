@@ -86,7 +86,7 @@ int main()
 Let's compare the snippet of code and its corresponding insights when
 there are 7 inputs.
 
-*Without Fold Expression Code*
+##### *Without Fold Expression Code*
 ```cpp
 #include <string>
 #include <iostream>
@@ -121,7 +121,7 @@ int main()
 }
 ```
 
-*Without Fold Expression Insights*
+##### *Without Fold Expression Insights*
 ```cpp
 // INSIGHTS
 #include <string>
@@ -240,8 +240,7 @@ int main()
   return 0;
 }
 ```
-
-*With Fold Expression Code*
+##### *With Fold Expression Code*
 ```cpp
 // RAW CODE
 #include <string>
@@ -268,7 +267,7 @@ int main()
 }
 ```
 
-*With Fold Expression Insights*
+##### *With Fold Expression Insights*
 ```cpp
 // INSIGHTS
 #include <string>
