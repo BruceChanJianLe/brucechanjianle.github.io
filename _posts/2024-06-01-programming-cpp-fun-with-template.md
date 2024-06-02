@@ -81,9 +81,9 @@ int main()
 }
 ```
 
-Let's compare the snippet of code and its corresponding insights.
-
 ### Code Analysis
+
+Let's compare the snippet of code and its corresponding insights.
 
 *Without Fold Expression*
 <table>
@@ -356,6 +356,18 @@ int main()
   </tr>
 </table>
 
+### Conclusion
+
+From the code insights, fold expressions will only generate the relavant code
+for the printing. On the other hand, template without fold expression will
+generate all templates for the recursive used. 7 -> 6 -> 5 -> 4 -> 3 -> 2 -> 1 -> 0.
+
+Using `x86-64 gcc 14.1` to analysis the assembly code, only
+[423](https://godbolt.org/z/rs69WdTPM) lines of
+instructions where generated for the fold expersion version while the one without
+has [620](https://godbolt.org/z/9E8GEqn71).
+
+We can conclude that 
 
 ## References
 
