@@ -85,26 +85,34 @@ int main()
 
 Comparisons
 
-<div style="display: flex; justify-content: space-around;">
-    <div style="flex-basis: 45%;">
-        <pre><code class="language-cpp">
-auto printCloud = [&](auto& msg)
-{
-  return "cloud " + std::to_string(index--) + std::string{" size "}
-    + std::to_string(msg) + std::string{", "};
-};
-        </code></pre>
-    </div>
-    <div style="flex-basis: 45%;">
-        <pre><code class="language-cpp">
-auto printCloud = [&](auto& msg) {
-    return "cloud " + std::to_string(index--) + std::string{" size "} +
+<table>
+  <tr>
+    <th>Original Code</th>
+    <th>Formatted Code</th>
+  </tr>
+  <tr>
+    <td>
+      <pre>
+        <code class="language-cpp">
+      auto printCloud = [&](auto& msg) {
+        return "cloud " + std::to_string(index--) + std::string{" size "}
+          + std::to_string(msg) + std::string{", "};
+      };
+        </code>
+      </pre>
+    </td>
+    <td>
+      <pre>
+        <code class="language-cpp">
+      auto printCloud = [&](auto& msg) {
+        return "cloud " + std::to_string(index--) + std::string{" size "} +
            std::to_string(msg) + std::string{", "};
-};
-        </code></pre>
-    </div>
-</div>
-
+      };
+        </code>
+      </pre>
+    </td>
+  </tr>
+</table>
 
 ## References
 
