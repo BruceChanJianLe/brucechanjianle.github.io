@@ -93,8 +93,7 @@ Let's compare the snippet of code and its corresponding insights.
   </tr>
   <tr>
     <td>
-      <pre><code class="language-cpp">
-#include &lt;string&gt;
+      <pre><code class="language-cpp">#include &lt;string&gt;
 #include &lt;iostream&gt;
 
 int index = 0;
@@ -102,7 +101,8 @@ int index = 0;
 template &lt;typename T&gt;
 std::string printCloud(const T& msg)
 {
-  return "cloud " + std::to_string(index--) + std::string{" size "} + std::to_string(msg) + std::string{", "};
+  return "cloud " + std::to_string(index--)
+  + std::string{" size "} + std::to_string(msg) + std::string{", "};
 }
 
 // Base case
@@ -126,8 +126,7 @@ int main()
 }</code></pre>
     </td>
     <td>
-      <pre><code class="language-cpp">
-#include &lt;string&gt;
+      <pre><code class="language-cpp">#include &lt;string&gt;
 #include &lt;iostream&gt;
 
 int index = 0;
@@ -246,6 +245,112 @@ int main()
   </tr>
 </table>
 
+*With Fold Expression*
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Insights</th>
+  </tr>
+  <tr>
+    <td>
+      <pre>
+        <code class="language-cpp">
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+
+template &lt;typename... Args&gt;
+std::string printClouds(const Args&... args)
+{
+  // increment index
+  auto index = sizeof...(args);
+
+  auto printCloud = [&](auto& msg) {
+    return "cloud " + std::to_string(index--) + std::string{" size "} +
+      std::to_string(msg) + std::string{", "};
+  };
+  return (... + printCloud(args));
+}
+
+int main()
+{
+  std::cout &lt;&lt; "result string: " &lt;&lt; printClouds(100, 200, 12, 11, 5, 6, 7) &lt;&lt; "\n";
+
+  return EXIT_SUCCESS;
+}</code></pre>
+    </td>
+    <td>
+      <pre>
+        <code class="language-cpp">#include &lt;string&gt;
+#include &lt;iostream&gt;
+
+template&lt;typename ... Args&gt;
+std::basic_string&lt;char&gt; printClouds(const Args &... args)
+{
+  unsigned long index = sizeof...(args);
+    
+  class __lambda_10_21
+  {
+    public: 
+    template&lt;class type_parameter_1_0&gt;
+    inline auto operator()(type_parameter_1_0 & msg) const
+    {
+      return (std::operator+(std::operator+("cloud ", std::to_string(index--)), std::basic_string&lt;char&gt;{" size ", std::allocator&lt;char&gt;()}) + std::to_string(msg)) + std::basic_string&lt;char&gt;{", ", std::allocator&lt;char&gt;()};
+    }
+    
+  };
+  
+  auto printCloud = __lambda_10_21{};
+  return (... + printCloud(args));
+}
+
+/* First instantiated from: insights.cpp:19 */
+#ifdef INSIGHTS_USE_TEMPLATE
+template&lt;&gt;
+std::basic_string&lt;char&gt; printClouds&lt;int, int, int, int, int, int, int&gt;(const int & __args0, const int & __args1, const int & __args2, const int & __args3, const int & __args4, const int & __args5, const int & __args6)
+{
+  unsigned long index = 7;
+    
+  class __lambda_10_21
+  {
+    public: 
+    template&lt;class type_parameter_0_0&gt;
+    inline /*constexpr */ auto operator()(type_parameter_0_0 & msg) const
+    {
+      return (std::operator+(std::operator+("cloud ", std::to_string(index--)), std::basic_string&lt;char&gt;(std::basic_string&lt;char&gt;(" size ", std::allocator&lt;char&gt;()))) + std::to_string(msg)) + std::basic_string&lt;char&gt;(std::basic_string&lt;char&gt;(", ", std::allocator&lt;char&gt;()));
+    }
+    
+    #ifdef INSIGHTS_USE_TEMPLATE
+    template&lt;&gt;
+    inline /*constexpr */ std::basic_string&lt;char&gt; operator()&lt;const int&gt;(const int & msg) const
+    {
+      return std::operator+(std::operator+(std::operator+(std::operator+("cloud ", std::to_string(index--)), std::basic_string&lt;char&gt;(std::basic_string&lt;char&gt;(" size ", std::allocator&lt;char&gt;()))), std::to_string(msg)), std::basic_string&lt;char&gt;(std::basic_string&lt;char&gt;(", ", std::allocator&lt;char&gt;())));
+    }
+    #endif
+    
+    private: 
+    unsigned long & index;
+    
+    public:
+    __lambda_10_21(unsigned long & _index)
+    : index{_index}
+    {}
+    
+  };
+  
+  __lambda_10_21 printCloud = __lambda_10_21{index};
+  return std::operator+(std::operator+(std::operator+(std::operator+(std::operator+(std::operator+(printCloud.operator()(__args0), printCloud.operator()(__args1)), printCloud.operator()(__args2)), printCloud.operator()(__args3)), printCloud.operator()(__args4)), printCloud.operator()(__args5)), printCloud.operator()(__args6));
+}
+#endif
+
+
+int main()
+{
+  std::operator&lt;&lt;(std::operator&lt;&lt;(std::operator&lt;&lt;(std::cout, "result string: "), printClouds(100, 200, 12, 11, 5, 6, 7)), "\n");
+  return 0;
+}</code></pre>
+    </td>
+  </tr>
+</table>
 
 ### Conclusion
 
