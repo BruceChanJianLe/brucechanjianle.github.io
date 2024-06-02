@@ -46,7 +46,6 @@ int main()
 {
   std::cout << "result string: " << printClouds(100, 200, 12, 11) << "\n";
   std::cout << "result string: " << printClouds(55, 67, 77) << "\n";
-  
 
   return EXIT_SUCCESS;
 }
@@ -64,7 +63,7 @@ to address this in a more consice manner without the need of a base case.
 template <typename... Args>
 std::string printClouds(const Args&... args)
 {
-  // increment index
+  // Get index
   auto index = sizeof...(args);
 
   auto printCloud = [&](auto& msg) {
@@ -83,33 +82,74 @@ int main()
 }
 ```
 
-Comparisons
+Let's compare the snippet of code and its corresponding insights.
 
 <table>
   <tr>
-    <th>Original Code</th>
-    <th>Formatted Code</th>
+    <th>Without Fold Expression</th>
+    <th>Fold Expression</th>
   </tr>
   <tr>
     <td>
       <pre>
         <code class="language-cpp">
-      auto printCloud = [&](auto& msg) {
-        return "cloud " + std::to_string(index--) + std::string{" size "}
-          + std::to_string(msg) + std::string{", "};
-      };
-        </code>
-      </pre>
+#include <string>
+#include <iostream>
+
+int index = 0;
+
+template <typename T>
+std::string printCloud(const T& msg)
+{
+  return "cloud " + std::to_string(index--) + std::string{" size "} + std::to_string(msg) + std::string{", "};
+}
+
+// Base case
+std::string printClouds()
+{
+  return {};
+}
+
+template <typename T, typename... Args>
+std::string printClouds(const T& msg, const Args&... args)
+{
+  // increment index
+  index++;
+  return printCloud(msg) + printClouds(args...);
+}
+
+int main()
+{
+  std::cout << "result string: " << printClouds(100, 200, 12, 11) << "\n";
+  return EXIT_SUCCESS;
+}</code></pre>
     </td>
     <td>
       <pre>
         <code class="language-cpp">
-      auto printCloud = [&](auto& msg) {
-        return "cloud " + std::to_string(index--) + std::string{" size "} +
-           std::to_string(msg) + std::string{", "};
-      };
-        </code>
-      </pre>
+#include <string>
+#include <iostream>
+
+template <typename... Args>
+std::string printClouds(const Args&... args)
+{
+  // Get index
+  auto index = sizeof...(args);
+
+  auto printCloud = [&](auto& msg) {
+    return "cloud " + std::to_string(index--) + std::string{" size "} +
+      std::to_string(msg) + std::string{", "};
+  };
+  return (... + printCloud(args));
+}
+
+int main()
+{
+  std::cout << "result string: " << printClouds(100, 200, 12, 11) << "\n";
+  std::cout << "result string: " << printClouds(55, 67, 77) << "\n";
+
+  return EXIT_SUCCESS;
+}</code></pre>
     </td>
   </tr>
 </table>
