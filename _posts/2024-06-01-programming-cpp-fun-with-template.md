@@ -127,8 +127,121 @@ int main()
     </td>
     <td>
       <pre><code class="language-cpp">
-      int main
-</code></pre>
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+
+int index = 0;
+
+template&lt;typename T&gt;
+std::basic_string&lt;char&gt; printCloud(const T & msg)
+{
+  return (std::operator+(std::operator+("cloud ", std::to_string(index--)), std::basic_string&lt;char&gt;{" size ", std::allocator&lt;char&gt;()}) + std::to_string(msg)) + std::basic_string&lt;char&gt;{", ", std::allocator&lt;char&gt;()};
+}
+
+/* First instantiated from: insights.cpp:23 */
+#ifdef INSIGHTS_USE_TEMPLATE
+template&lt;&gt;
+std::basic_string&lt;char&gt; printCloud&lt;int&gt;(const int & msg)
+{
+  return std::operator+(std::operator+(std::operator+(std::operator+("cloud ", std::to_string(index--)), std::basic_string&lt;char&gt;(std::basic_string&lt;char&gt;(" size ", std::allocator&lt;char&gt;()))), std::to_string(msg)), std::basic_string&lt;char&gt;(std::basic_string&lt;char&gt;(", ", std::allocator&lt;char&gt;())));
+}
+#endif
+
+
+std::basic_string&lt;char&gt; printClouds()
+{
+  return std::basic_string&lt;char&gt;{};
+}
+
+template&lt;typename T, typename ... Args&gt;
+std::basic_string&lt;char&gt; printClouds(const T & msg, const Args &... args)
+{
+  index++;
+  return printCloud(msg) + printClouds(args... );
+}
+
+/* First instantiated from: insights.cpp:28 */
+#ifdef INSIGHTS_USE_TEMPLATE
+template&lt;&gt;
+std::basic_string&lt;char&gt; printClouds&lt;int, int, int, int, int, int, int&gt;(const int & msg, const int & __args1, const int & __args2, const int & __args3, const int & __args4, const int & __args5, const int & __args6)
+{
+  index++;
+  return std::operator+(printCloud(msg), printClouds(__args1, __args2, __args3, __args4, __args5, __args6));
+}
+#endif
+
+
+/* First instantiated from: insights.cpp:23 */
+#ifdef INSIGHTS_USE_TEMPLATE
+template&lt;&gt;
+std::basic_string&lt;char&gt; printClouds&lt;int, int, int, int, int, int&gt;(const int & msg, const int & __args1, const int & __args2, const int & __args3, const int & __args4, const int & __args5)
+{
+  index++;
+  return std::operator+(printCloud(msg), printClouds(__args1, __args2, __args3, __args4, __args5));
+}
+#endif
+
+
+/* First instantiated from: insights.cpp:23 */
+#ifdef INSIGHTS_USE_TEMPLATE
+template&lt;&gt;
+std::basic_string&lt;char&gt; printClouds&lt;int, int, int, int, int&gt;(const int & msg, const int & __args1, const int & __args2, const int & __args3, const int & __args4)
+{
+  index++;
+  return std::operator+(printCloud(msg), printClouds(__args1, __args2, __args3, __args4));
+}
+#endif
+
+
+/* First instantiated from: insights.cpp:23 */
+#ifdef INSIGHTS_USE_TEMPLATE
+template&lt;&gt;
+std::basic_string&lt;char&gt; printClouds&lt;int, int, int, int&gt;(const int & msg, const int & __args1, const int & __args2, const int & __args3)
+{
+  index++;
+  return std::operator+(printCloud(msg), printClouds(__args1, __args2, __args3));
+}
+#endif
+
+
+/* First instantiated from: insights.cpp:23 */
+#ifdef INSIGHTS_USE_TEMPLATE
+template&lt;&gt;
+std::basic_string&lt;char&gt; printClouds&lt;int, int, int&gt;(const int & msg, const int & __args1, const int & __args2)
+{
+  index++;
+  return std::operator+(printCloud(msg), printClouds(__args1, __args2));
+}
+#endif
+
+
+/* First instantiated from: insights.cpp:23 */
+#ifdef INSIGHTS_USE_TEMPLATE
+template&lt;&gt;
+std::basic_string&lt;char&gt; printClouds&lt;int, int&gt;(const int & msg, const int & __args1)
+{
+  index++;
+  return std::operator+(printCloud(msg), printClouds(__args1));
+}
+#endif
+
+
+/* First instantiated from: insights.cpp:23 */
+#ifdef INSIGHTS_USE_TEMPLATE
+template&lt;&gt;
+std::basic_string&lt;char&gt; printClouds&lt;int&gt;(const int & msg)
+{
+  index++;
+  return std::operator+(printCloud(msg), printClouds());
+}
+#endif
+
+
+int main()
+{
+  std::operator&lt;&lt;(std::operator&lt;&lt;(std::operator&lt;&lt;(std::cout, "result string: "), printClouds(100, 200, 12, 11, 5, 6, 7)), "\n");
+  return 0;
+}</code></pre>
     </td>
   </tr>
 </table>
