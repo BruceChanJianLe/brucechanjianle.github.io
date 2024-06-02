@@ -66,11 +66,10 @@ std::string printClouds(const Args&... args)
   // Get index
   auto index = sizeof...(args);
 
-  auto printCloud = [&](auto& msg) {
+  return ([&, args]() {
     return "cloud " + std::to_string(index--) + std::string{" size "} +
-      std::to_string(msg) + std::string{", "};
-  };
-  return (... + printCloud(args));
+      std::to_string(args) + std::string{", "};
+  }() + ...);
 }
 
 int main()
@@ -265,7 +264,7 @@ int main()
 template <typename... Args>
 std::string printClouds(const Args&... args)
 {
-  // Get index
+  // increment index
   auto index = sizeof...(args);
 
   auto printCloud = [&](auto& msg) {
@@ -356,6 +355,7 @@ int main()
     </td>
   </tr>
 </table>
+
 
 ## References
 
