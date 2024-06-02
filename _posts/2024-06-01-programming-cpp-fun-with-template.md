@@ -355,6 +355,11 @@ has [620](https://godbolt.org/z/9E8GEqn71).
 We can conclude that fold expression method is easier to read and
 much more consice.
 
+ATTENTION: One more take away, is that, a lambda expression with name
+is always better than one without. As the name will help compliers to
+optimize better. (Refer to the original fold expression example and the one
+in the Code Analysis)
+
 ## References
 
 - https://www.youtube.com/watch?v=v5tLFRfktWA
