@@ -85,39 +85,25 @@ int main()
 
 Comparisons
 
-<table>
-<tr>
-<th>Json 1</th>
-<th>Markdown</th>
-</tr>
-<tr>
-<td>
-  
-```json
+<div style="display: flex; justify-content: space-around;">
+    <div style="flex-basis: 45%;">
+        <pre><code class="language-cpp">
+auto printCloud = [&](auto& msg)
 {
-  "id": 1,
-  "username": "joe",
-  "email": "joe@example.com",
-  "order_id": "3544fc0"
-}
-```
-  
-</td>
-<td>
-
-```json
-{
-  "id": 5,
-  "username": "mary",
-  "email": "mary@example.com",
-  "order_id": "f7177da"
-}
-```
-
-</td>
-</tr>
-</table>
-
+  return "cloud " + std::to_string(index--) + std::string{" size "}
+    + std::to_string(msg) + std::string{", "};
+};
+        </code></pre>
+    </div>
+    <div style="flex-basis: 45%;">
+        <pre><code class="language-cpp">
+auto printCloud = [&](auto& msg) {
+    return "cloud " + std::to_string(index--) + std::string{" size "} +
+           std::to_string(msg) + std::string{", "};
+};
+        </code></pre>
+    </div>
+</div>
 
 
 ## References
