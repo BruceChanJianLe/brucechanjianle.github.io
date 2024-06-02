@@ -367,7 +367,8 @@ Using `x86-64 gcc 14.1` to analysis the assembly code, only
 instructions where generated for the fold expersion version while the one without
 has [620](https://godbolt.org/z/9E8GEqn71).
 
-We can conclude that 
+We can conclude that fold expression method is easier to read and
+much more consice.
 
 ## References
 
