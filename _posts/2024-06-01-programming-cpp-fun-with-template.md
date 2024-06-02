@@ -97,7 +97,33 @@ Let's compare the snippet of code and its corresponding insights.
 #include &lt;string&gt;
 #include &lt;iostream&gt;
 
-</code></pre>
+int index = 0;
+
+template &lt;typename T&gt;
+std::string printCloud(const T& msg)
+{
+  return "cloud " + std::to_string(index--) + std::string{" size "} + std::to_string(msg) + std::string{", "};
+}
+
+// Base case
+std::string printClouds()
+{
+  return {};
+}
+
+template &lt;typename T, typename... Args&gt;
+std::string printClouds(const T& msg, const Args&... args)
+{
+  // increment index
+  index++;
+  return printCloud(msg) + printClouds(args...);
+}
+
+int main()
+{
+  std::cout &lt;&lt; "result string: " &lt;&lt; printClouds(100, 200, 12, 11, 5, 6, 7) &lt;&lt; "\n";
+  return EXIT_SUCCESS;
+}</code></pre>
     </td>
     <td>
       <pre><code class="language-cpp">
