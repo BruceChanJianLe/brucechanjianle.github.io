@@ -94,6 +94,10 @@ Let's compare the snippet of code and its corresponding insights.
   <tr>
     <td>
       <pre><code class="language-cpp">
+```cpp
+#include <string>
+#include <iostream>
+
 int index = 0;
 
 template <typename T>
@@ -120,7 +124,7 @@ int main()
 {
   std::cout << "result string: " << printClouds(100, 200, 12, 11, 5, 6, 7) << "\n";
   return EXIT_SUCCESS;
-}</code></pre>
+}```</code></pre>
     </td>
     <td>
       <pre><code class="language-cpp">
