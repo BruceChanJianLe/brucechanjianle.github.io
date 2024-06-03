@@ -8,9 +8,9 @@ tags: [programming, cpp]
 
 > This article are notes on using template with C++ in my daily life.
 
-## Fold Expression
+# Fold Expression
 
-### Example 1 (Debugging Prints)
+## Example 1 (Debugging Prints)
 
 Sometimes we may want to print debugging outputs,
 but we may not know the size of the inputs. For example, printing the size of
@@ -81,12 +81,12 @@ int main()
 }
 ```
 
-#### Code Analysis
+### Code Analysis
 
 Let's compare the snippet of code and its corresponding insights when
 there are 7 inputs.
 
-##### *Without Fold Expression Code*
+#### *Without Fold Expression Code*
 ```cpp
 #include <string>
 #include <iostream>
@@ -121,7 +121,7 @@ int main()
 }
 ```
 
-##### *Without Fold Expression Insights*
+#### *Without Fold Expression Insights*
 ```cpp
 // INSIGHTS
 #include <string>
@@ -240,7 +240,7 @@ int main()
   return 0;
 }
 ```
-##### *With Fold Expression Code*
+#### *With Fold Expression Code*
 ```cpp
 // RAW CODE
 #include <string>
@@ -267,7 +267,7 @@ int main()
 }
 ```
 
-##### *With Fold Expression Insights*
+#### *With Fold Expression Insights*
 ```cpp
 // INSIGHTS
 #include <string>
@@ -340,7 +340,7 @@ int main()
 }
 ```
 
-#### Conclusion
+### Conclusion
 
 From the code insights, fold expressions will only generate the relavant code
 for the printing. On the other hand, template without fold expression will
@@ -359,6 +359,6 @@ is always better than one without. As the name will help compliers to
 optimize better. (Refer to the original fold expression example and the one
 in the Code Analysis)
 
-## References
+# References
 
 - https://www.youtube.com/watch?v=v5tLFRfktWA
