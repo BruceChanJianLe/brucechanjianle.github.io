@@ -361,4 +361,4 @@ in the Code Analysis)
 
 # References
 
-- https://www.youtube.com/watch?v=v5tLFRfktWA
+- [Fold Expression](https://www.youtube.com/watch?v=v5tLFRfktWA)
