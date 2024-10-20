@@ -8,7 +8,7 @@ tags: [programming]
 
 > The journey of writing a quick cd tool for ros2 packages.
 
-![image](https://github.com/user-attachments/assets/0b79a1bf-9bed-4092-b21e-5e37eea84658)
+![image](../resources/2024-06-16-programming-the-ros2cd-tool/demo_ros2cd.gif)
 
 If you use ROS (Robot Operating System) long enough,
 you would know the command line tool `roscd`.
