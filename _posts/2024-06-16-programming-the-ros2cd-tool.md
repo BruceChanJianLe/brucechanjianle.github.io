@@ -41,7 +41,7 @@ any issue.
 1. Obtain the path to the packages from the environment variables
 1. Loop through the paths and save it to `trimmed_workspaces` variable 
    if it contains the `install` keyword
-1. To Ensure that the path is a ROS2 package, we will filter the obtained
+1. To ensure that the path is a ROS2 package, we will filter the obtained
    paths by checking whether package.xml file exist
 1. Prompt users to choose with `fzf` to fuzzy search through the available
    packages
