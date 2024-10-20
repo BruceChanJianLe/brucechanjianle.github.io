@@ -52,7 +52,7 @@ any issue.
 curl -s https://raw.githubusercontent.com/BruceChanJianLe/ros2cd/refs/heads/master/install.sh | bash
 ```
 
-Reference:
+## Reference:
 - https://mrigank11.github.io/2018/03/zsh-auto-completion/
 - https://caelis.medium.com/create-basic-zsh-command-with-auto-completion-cc069f971ba8
 - https://github.com/zsh-users/zsh-completions/blob/master/zsh-completions-howto.org
