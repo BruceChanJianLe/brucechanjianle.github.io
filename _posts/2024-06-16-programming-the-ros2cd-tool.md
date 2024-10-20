@@ -62,7 +62,10 @@ One thing that could actually be worked on is to cache the results of the local
 packages, instead of looking it up every single invoke of `ros2cd`.
 Latency can be observed with large workspaces that has a lot of packages.
 
-## Reference:
+
+Surely, tab completion could also be something nice. Well below are some
+references that I found useful for readings about zsh tab completion:
+
 - https://mrigank11.github.io/2018/03/zsh-auto-completion/
 - https://caelis.medium.com/create-basic-zsh-command-with-auto-completion-cc069f971ba8
 - https://github.com/zsh-users/zsh-completions/blob/master/zsh-completions-howto.org
