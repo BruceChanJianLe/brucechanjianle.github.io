@@ -47,7 +47,10 @@ any issue.
    packages
 1. Lastly, jump to the selected directory
 
-## Installation
+## Try Out!
+
+The tool is currently on [GitHub](https://github.com/BruceChanJianLe/ros2cd),
+please feel free to try it out! Suggestions and pull request are welcome!
 
 ```bash
 curl -s https://raw.githubusercontent.com/BruceChanJianLe/ros2cd/refs/heads/master/install.sh | bash
