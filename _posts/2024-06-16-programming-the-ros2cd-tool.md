@@ -24,7 +24,8 @@ to switch to would be the install space which is not what we developers wants.
 
 
 If you dig deeper, you would find the `colcon_cd` tool. Unfortunately, this tool
-is written by someone how has never used `roscd`. So to close this bridge,
+is written by [someone](https://answers.ros.org/question/277801/ros2-roscd-feature/)
+how has never used `roscd`. So to close this bridge,
 let's dive into a simple solution for `ros2cd`, it is by no means perfect, but
 hopefully a starting point where others could built on top and be helpful to
 those who are used to `roscd` coming from ROS1.
