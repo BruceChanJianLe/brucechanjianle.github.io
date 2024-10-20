@@ -56,6 +56,12 @@ please feel free to try it out! Suggestions and pull request are welcome!
 curl -s https://raw.githubusercontent.com/BruceChanJianLe/ros2cd/refs/heads/master/install.sh | bash
 ```
 
+## Future Work
+
+One thing that could actually be worked on is to cache the results of the local
+packages, instead of looking it up every single invoke of `ros2cd`.
+Latency can be observed with large workspaces that has a lot of packages.
+
 ## Reference:
 - https://mrigank11.github.io/2018/03/zsh-auto-completion/
 - https://caelis.medium.com/create-basic-zsh-command-with-auto-completion-cc069f971ba8
