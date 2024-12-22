@@ -23,7 +23,6 @@ to meet the specific needs of the system or user.
       1. Background Processes
     </strong>
   </summary>
-
 <ul>
   <li>
     Services typically run in the background, meaning they do not
@@ -35,7 +34,6 @@ to meet the specific needs of the system or user.
     <code>systemd</code>, <code>httpd</code>.
   </li>
 </ul>
-
 </details>
 
 
@@ -45,7 +43,6 @@ to meet the specific needs of the system or user.
       2. Managed by Init System
     </strong>
   </summary>
-
 <ul>
   <li>
     Services are started, stopped and managed by an <em>init</em> system
@@ -60,39 +57,90 @@ to meet the specific needs of the system or user.
     The <code>systemctl</code> command is used to manage services in <code>systemd</code>
   </li>
 </ul>
-
 </details>
 
-1. **Configuration**:
-  - Services are configured through files stored in locations such as
-    + `/etc/systemd/system/`: highest priority
-    + `/run/systemd/system/`
-    + `/lib/systemd/system/`: lowest priority
+<details>
+  <summary>
+    <strong>
+      3. Configuration
+    </strong>
+  </summary>
+<ul>
+  <li>
+    Services are configured through files stored in locations such as
+    <ul>
+      <li><code>/etc/systemd/system/</code>: highest priority.</li>
+      <li><code>/run/systemd/system/</code></li>
+      <li><code>/lib/systemd/system/</code>: lowest priority.</li>
+    </ul>
+  </li>
+</ul>
+</details>
 
-1. **Starts at Boot**:
-  - Some services are enabled to start automatically when the system boots.
+<details>
+  <summary>
+    <strong>
+      4. Starts at Boot
+    </strong>
+  </summary>
+<ul>
+  <li>
+    Some services are enabled to start automatically when the system boots.
     For example, a web server like `nginx` can be configured to start
     every time the system is restarted.
+  </li>
+</ul>
+</details>
 
-1. **Common Linux Services**:
-  - System Services:
-    + networkd: manages network configurations and connectivity
-    + systemd-journald: handles logging and journal services,
-                        capturing system logs and events
-    + cron: schedules and executes recurring tasks or scripts at specified times
-    + dbus: facilitates communication between system processes and
-            application through a messages bus
-  - Network Services:
-    + sshd: SSH server
-    + nginx: web server
-    + dnsmasq: DNS
-  - Application Services:
-    + mysql: database server
-    + mariadb: database server
-    + docker: virtual environment
-  - Hardware Services:
-    + cups: for printing
-    + bluetooth: for bluetooth devices
+<details>
+  <summary>
+    <strong>
+      5. Common Linux Services
+    </strong>
+  </summary>
+<ul>
+  <li>
+    <strong>
+      System Services:
+    </strong>
+    <ul>
+      <li><strong>networkd</strong>: manages network configurations and connectivity.</li>
+      <li><strong>systemd-journald</strong>: handles logging and journal services, capturing system logs and events.</li>
+      <li><strong>cron</strong>: schedules and executes recurring tasks or scripts at specified times.</li>
+      <li><strong>dbus</strong>: facilitates communication between system processes and application through a messages bus.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>
+      Network Services:
+    </strong>
+    <ul>
+      <li><strong>sshd</strong>: SSH server.</li>
+      <li><strong>nginx</strong>: web server.</li>
+      <li><strong>dnsmasq</strong>: DNS.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>
+      Application Services:
+    </strong>
+    <ul>
+      <li><strong>mysql</strong>: database server.</li>
+      <li><strong>mariadb</strong>: database server.</li>
+      <li><strong>docker</strong>: virtual environment.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>
+      Hardware Services:
+    </strong>
+    <ul>
+      <li><strong>cups</strong>: for printing.</li>
+      <li><strong>bluetooth</strong>: for bluetooth devices.</li>
+    </ul>
+  </li>
+</ul>
+</details>
 
 ### Systemd
 
