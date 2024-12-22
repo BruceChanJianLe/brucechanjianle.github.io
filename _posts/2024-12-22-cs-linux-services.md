@@ -33,8 +33,9 @@ to meet the specific needs of the system or user.
 
 1. **Configuration**:
   - Services are configured through files stored in locations such as
-    - `/etc/systemd/system/`
-    - `/lib/systemd/system/`
+    - `/etc/systemd/system/`: highest priority
+    - `/run/systemd/system/`
+    - `/lib/systemd/system/`: lowest priority
 
 1. **Starts at Boot**:
   - Some services are enabled to start automatically when the system boots.
