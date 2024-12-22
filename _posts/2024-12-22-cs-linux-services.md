@@ -17,11 +17,16 @@ to meet the specific needs of the system or user.
 
 ### Linux Services
 
-1. **Background Processes**:
+<details>
+  <summary>**Background Processes**</summary>
+
   - Services typically run in the background, meaning they do not
     interact with the user directly through the terminal of GUI.
   - They are often referred to as _daemons_ and typically have names
     ending with a `d`, e.g. `sshd`, `systemd`, `httpd`.
+
+</details>
+
 
 1. **Managed by Init System**:
   - Services are started, stopped and managed by an _init_ system
