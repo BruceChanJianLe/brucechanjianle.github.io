@@ -8,14 +8,15 @@ tags: [cs, linux]
 
 > Ahh...Linux services, cannot talk about them without mentioning systemd!
 
-## Introduction
-
 Linux services are vital components of the system,
 responsible for ensuring various functionalities run smoothly.
 They are managed through init systems like `systemd` and can be tailored
 to meet the specific needs of the system or user.
 
-### Linux Services
+
+Let's have a look at some importances of linux services!
+
+# Linux Services
 
 <details>
   <summary>
@@ -142,16 +143,20 @@ to meet the specific needs of the system or user.
 </ul>
 </details>
 
-### Systemd
+
+Now that we know what services do in Linux, let's address the elephant in the
+room. What is `systemd`? And why it is relatd to Linux services.
+
+# Systemd
 
 `systemd` is an init system and service manager for Linux operating systems,
 designed to bootstrap the system and manage services and processes during runtime.
 It is an init system that is the first process to runs, hence, with PID1.
 It manages all the units on the system, and service is just on of the units.
 
-## Units
-
-Below are some common types of units:
+> Units
+>
+> Below are some common types of units:
 
 Unit Type | File Suffix | Description
 --- | --- | ---
@@ -173,7 +178,7 @@ Unit Type | File Suffix | Description
 - Timer: backup.timer triggers a backup service at specific intervals.
 - Target: graphical.target represents the system state for a graphical desktop environment.
 
-## The Basics
+# The Basics
 
 Action | Command
 --- | ---
@@ -184,6 +189,7 @@ Restart a service | `sudo systemctl restart <service_name>`
 Check the status of a service | `systemctl status <service_name>`
 Enable a service to start at boot | `sudo systemctl enable <service_name>`
 Disable a service from starting at boot | `sudo systemctl disable <service_name>`
+
 
 
 ## Reference
