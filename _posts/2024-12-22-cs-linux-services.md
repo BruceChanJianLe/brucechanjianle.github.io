@@ -18,12 +18,18 @@ to meet the specific needs of the system or user.
 ### Linux Services
 
 <details>
-  <summary>**Background Processes**</summary>
+  <summary><strong>Background Processes</strong><summary>
 
-- Services typically run in the background, meaning they do not
-  interact with the user directly through the terminal of GUI.
-- They are often referred to as _daemons_ and typically have names
-  ending with a `d`, e.g. `sshd`, `systemd`, `httpd`.
+<ul>
+  <li>
+    Services typically run in the background, meaning they do not
+    interact with the user directly through the terminal of GUI.
+  </li>
+  <li>
+    They are often referred to as _daemons_ and typically have names
+    ending with a `d`, e.g. `sshd`, `systemd`, `httpd`.
+  </li>
+</ul>
 
 </details>
 
