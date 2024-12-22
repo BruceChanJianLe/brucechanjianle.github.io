@@ -16,7 +16,7 @@ to meet the specific needs of the system or user.
 
 Let's have a look at some importances of linux services!
 
-# Linux Services
+## Linux Services
 
 <details>
   <summary>
@@ -147,15 +147,13 @@ Let's have a look at some importances of linux services!
 Now that we know what services do in Linux, let's address the elephant in the
 room. What is `systemd`? And why it is relatd to Linux services.
 
-# Systemd
+## Systemd
 
 `systemd` is an init system and service manager for Linux operating systems,
 designed to bootstrap the system and manage services and processes during runtime.
 It is an init system that is the first process to runs, hence, with PID1.
 It manages all the units on the system, and service is just on of the units.
 
-> Units
->
 > Below are some common types of units:
 
 Unit Type | File Suffix | Description
@@ -178,7 +176,7 @@ Unit Type | File Suffix | Description
 - Timer: backup.timer triggers a backup service at specific intervals.
 - Target: graphical.target represents the system state for a graphical desktop environment.
 
-# The Basics
+## The Basics
 
 Action | Command
 --- | ---
