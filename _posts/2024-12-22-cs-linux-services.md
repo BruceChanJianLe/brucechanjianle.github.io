@@ -96,6 +96,7 @@ Unit Type | File Suffix | Description
 
 Action | Command
 --- | ---
+Check status of a service | `sudo systemctl status <service_name>`
 Start a service | `sudo systemctl start <service_name>`
 Stop a service | `sudo systemctl stop <service_name>`
 Restart a service | `sudo systemctl restart <service_name>`
