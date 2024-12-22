@@ -18,7 +18,11 @@ to meet the specific needs of the system or user.
 ### Linux Services
 
 <details>
-  <summary><strong>Background Processes</strong><summary>
+  <summary>
+    <strong>
+      1. Background Processes
+    </strong>
+  </summary>
 
 <ul>
   <li>
@@ -26,21 +30,38 @@ to meet the specific needs of the system or user.
     interact with the user directly through the terminal of GUI.
   </li>
   <li>
-    They are often referred to as _daemons_ and typically have names
-    ending with a `d`, e.g. `sshd`, `systemd`, `httpd`.
+    They are often referred to as <em>daemons</em> and typically have names
+    ending with a <code>d</code>, e.g. <code>sshd</code>,
+    <code>systemd</code>, <code>httpd</code>.
   </li>
 </ul>
 
 </details>
 
 
-1. **Managed by Init System**:
-  - Services are started, stopped and managed by an _init_ system
+<details>
+  <summary>
+    <strong>
+      2. Managed by Init System
+    </strong>
+  </summary>
+
+<ul>
+  <li>
+    Services are started, stopped and managed by an <em>init</em> system
     The most commmon init systems are:
-        + **systemd**: The most widely used on modern Linux distributions.
-        + **SysVinit**: Used in older Linux systems.
-        + **Upstart**: An older init system, primarily used by Ubuntu in the past.
-  - The `systemctl` command is used to manage services in `systemd`
+    <ul>
+      <li><strong>systemd</strong>: The most widely used on modern Linux distributions.</li>
+      <li><strong>SysVinit</strong>: Used in older Linux systems</li>
+      <li><strong>Upstart</strong>: An older init system, primarily used by Ubuntu in the past.</li>
+    </ul>
+  </li>
+  <li>
+    The <code>systemctl</code> command is used to manage services in <code>systemd</code>
+  </li>
+</ul>
+
+</details>
 
 1. **Configuration**:
   - Services are configured through files stored in locations such as
