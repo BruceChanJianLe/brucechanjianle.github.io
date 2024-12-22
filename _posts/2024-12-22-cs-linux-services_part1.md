@@ -1,5 +1,5 @@
 ---
-title: Linux Services
+title: Linux Services Part 1
 author: cjl
 date: 2024-12-22 12:38:58 +0800
 categories: [CS]
@@ -7,6 +7,8 @@ tags: [cs, linux]
 ---
 
 > Ahh...Linux services, cannot talk about them without mentioning systemd!
+> Let's go over some theoretical things of Linux services in the first part,
+> and we shall have a more practical example on the second part!
 
 Linux services are vital components of the system,
 responsible for ensuring various functionalities run smoothly.
@@ -36,7 +38,6 @@ Let's have a look at some importances of linux services!
   </li>
 </ul>
 </details>
-
 
 <details>
   <summary>
@@ -175,20 +176,6 @@ Unit Type | File Suffix | Description
 - Service: nginx.service runs 
 - Timer: backup.timer triggers a backup service at specific intervals.
 - Target: graphical.target represents the system state for a graphical desktop environment.
-
-## The Basics
-
-Action | Command
---- | ---
-Check status of a service | `sudo systemctl status <service_name>`
-Start a service | `sudo systemctl start <service_name>`
-Stop a service | `sudo systemctl stop <service_name>`
-Restart a service | `sudo systemctl restart <service_name>`
-Check the status of a service | `systemctl status <service_name>`
-Enable a service to start at boot | `sudo systemctl enable <service_name>`
-Disable a service from starting at boot | `sudo systemctl disable <service_name>`
-
-
 
 ## Reference
 
