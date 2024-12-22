@@ -26,16 +26,16 @@ to meet the specific needs of the system or user.
 1. **Managed by Init System**:
   - Services are started, stopped and managed by an _init_ system
     The most commmon init systems are:
-      - **systemd**: The most widely used on modern Linux distributions.
-      - **SysVinit**: Used in older Linux systems.
-      - **Upstart**: An older init system, primarily used by Ubuntu in the past.
+        + **systemd**: The most widely used on modern Linux distributions.
+        + **SysVinit**: Used in older Linux systems.
+        + **Upstart**: An older init system, primarily used by Ubuntu in the past.
   - The `systemctl` command is used to manage services in `systemd`
 
 1. **Configuration**:
   - Services are configured through files stored in locations such as
-    - `/etc/systemd/system/`: highest priority
-    - `/run/systemd/system/`
-    - `/lib/systemd/system/`: lowest priority
+    + `/etc/systemd/system/`: highest priority
+    + `/run/systemd/system/`
+    + `/lib/systemd/system/`: lowest priority
 
 1. **Starts at Boot**:
   - Some services are enabled to start automatically when the system boots.
