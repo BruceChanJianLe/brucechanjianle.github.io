@@ -34,7 +34,7 @@ to meet the specific needs of the system or user.
 1. **Configuration**:
   - Services are configured through files stored in locations such as
     - `/etc/systemd/system/`
-    - `/usr/lib/systemd/system/`
+    - `/lib/systemd/system/`
 
 1. **Starts at Boot**:
   - Some services are enabled to start automatically when the system boots.
@@ -43,23 +43,23 @@ to meet the specific needs of the system or user.
 
 1. **Common Linux Services**:
   - System Services:
-    - networkd: manages network configurations and connectivity
-    - systemd-journald: handles logging and journal services,
+    + networkd: manages network configurations and connectivity
+    + systemd-journald: handles logging and journal services,
                         capturing system logs and events
-    - cron: schedules and executes recurring tasks or scripts at specified times
-    - dbus: facilitates communication between system processes and
+    + cron: schedules and executes recurring tasks or scripts at specified times
+    + dbus: facilitates communication between system processes and
             application through a messages bus
   - Network Services:
-    - sshd: SSH server
-    - nginx: web server
-    - dnsmasq: DNS
+    + sshd: SSH server
+    + nginx: web server
+    + dnsmasq: DNS
   - Application Services:
-    - mysql: database server
-    - mariadb: database server
-    - docker: virtual environment
+    + mysql: database server
+    + mariadb: database server
+    + docker: virtual environment
   - Hardware Services:
-    - cups: for printing
-    - bluetooth: for bluetooth devices
+    + cups: for printing
+    + bluetooth: for bluetooth devices
 
 ### Systemd
 
