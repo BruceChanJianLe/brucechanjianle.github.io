@@ -1,5 +1,5 @@
 ---
-title: Linux Services Part 1
+title: Linux Services (Part 1)
 author: cjl
 date: 2024-12-22 12:38:58 +0800
 categories: [CS]
