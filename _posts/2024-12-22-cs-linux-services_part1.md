@@ -153,7 +153,7 @@ room. What is `systemd`? And why it is relatd to Linux services.
 `systemd` is an init system and service manager for Linux operating systems,
 designed to bootstrap the system and manage services and processes during runtime.
 It is an init system that is the first process to runs, hence, with PID1.
-It manages all the units on the system, and service is just on of the units.
+It manages all the units on the system, and service is just one of the units.
 
 > Below are some common types of units:
 
@@ -173,9 +173,82 @@ Unit Type | File Suffix | Description
 **Snapshot** | `.snapshot` | Represents a saved state of the systemd manager for rollback purposes.
 
 **Examples**:
-- Service: nginx.service runs 
-- Timer: backup.timer triggers a backup service at specific intervals.
-- Target: graphical.target represents the system state for a graphical desktop environment.
+- Service: `nginx.service` runs 
+- Timer: `backup.timer` triggers a backup service at specific intervals.
+- Target: `graphical.target` represents the system state for a graphical desktop environment.
+
+`systemd` is used by Ubuntu, and a few Linux distros,
+Fedora, CentOS, RedHat, and Arch, just to name a few.
+It starts a target which can start various other targets and services.
+These are what we called units.
+And for Mac user, it would be `launchd` that is managing your daemon and services.
+You can read more about it [here](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html).
+
+
+To see which target is the default for this system:
+```bash
+systemctl get-default
+# graphical.target
+```
+
+An Ubuntu system, generally runs at the graphical target level.
+Which itself requires the multi-user.targets, which requires various targets,
+such as basic.target, sockets.target, network.target, etc.
+
+To list the dependencies of a target, you can run:
+```bash
+systemctl list-dependencies graphical.target
+```
+
+To list the currectly active targets, we can run:
+```bash
+systemctl list-units --type target
+```
+
+Let's take a look at a simple example of service file, `rsyslog`.
+It resides in the `/etc/systemd/system/syslog.service`.
+
+```systemd
+[Unit]
+Description=System Logging Service
+Requires=syslog.socket
+Documentation=man:rsyslogd(8)
+Documentation=man:rsyslog.conf(5)
+Documentation=https://www.rsyslog.com/doc/
+
+[Service]
+Type=notify
+ExecStartPre=/usr/lib/rsyslog/reload-apparmor-profile
+ExecStart=/usr/sbin/rsyslogd -n -iNONE
+StandardOutput=null
+StandardError=journal
+Restart=on-failure
+
+# Increase the default a bit in order to allow many simultaneous
+# files to be monitored, we might need a lot of fds.
+LimitNOFILE=16384
+
+CapabilityBoundingSet=CAP_BLOCK_SUSPEND CAP_CHOWN CAP_DAC_OVERRIDE CAP_LEASE CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_SYS_ADMIN CAP_SYS_RESOURCE CAP_SYSLOG CAP_MAC_ADMIN CAP_SETGID CAP_SETUID
+SystemCallFilter=@system-service
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+NoNewPrivileges=yes
+ProtectHome=no
+ProtectClock=yes
+ProtectHostname=yes
+
+[Install]
+WantedBy=multi-user.target
+Alias=syslog.service
+```
+
+We will go over more in detail about a service file.
+For now, let's look at the bottom, you can see that it is wanted
+by the `multi-user.target`. This is automatically done, when you
+installed a software. Therefore, if it needs a service file,
+the installer will ensure creating it and making `systemd` aware.
+
+Let's learn more about service files and writing your own in the next
+[post](https://brucechanjianle.github.io/posts/cs-linux-services_part2/).
 
 ## Reference
 
