@@ -268,5 +268,6 @@ user. Until then, keep learning!
 ## Reference
 
 - https://bbs.archlinux.org/viewtopic.php?id=247292
+- https://linuxhandbook.com/create-systemd-services/
 - https://wiki.archlinux.org/title/Tmux#Autostart_with_systemd
 - https://naftuli.wtf/2017/12/28/systemd-user-environment/
