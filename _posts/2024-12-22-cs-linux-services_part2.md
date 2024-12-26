@@ -91,7 +91,7 @@ sudo systemctl restart sshd
 Great! Now you know how to configure a service! Let's try to write your own
 service file.
 
-## Example of Your Own Service (SYSTEM-WIDE)
+## Example of Your Own Service (ROOT)
 
 Well, hold up! Before we can get there, we first need to address the difference
 between the service files in the `etc` directory and `~/.config`.
@@ -192,7 +192,7 @@ the wants folder for the target specified in wanted by. And you can manage
 it with `systemctl`.
 
 
-## Example of Your Own Service (USER-SERVICE)
+## Example of Your Own Service (USER)
 
 Well, sometimes we don't always need a system wide service, for example,
 you just need to start a tmux script when the user has started
