@@ -262,7 +262,7 @@ systemctl --user status my_tmux
 
 
 In summary, we have learned about service files, managing a common service
-(secure shell), look at how to write our own service file for system wide and
+(secure shell), looked at how to write our own service file for system wide and
 user. Until then, keep learning!
 
 ## Reference
