@@ -11,8 +11,6 @@ tags: [cs, linux, python]
 > everytime you start your computer, won't that be great?
 
 
-# Automagically Start Jupyterlab
-
 Yes, you can automatically start your jupyterlab everytime you boot into
 your system. It's not a dream! With what we learned from Linux service,
 it is quite easy to do that. But first you will need to install jupyterlab
