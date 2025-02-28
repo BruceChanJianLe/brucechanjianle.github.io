@@ -42,12 +42,12 @@ micromamba create -n jupyterlab jupyterlab -c conda-forge
 You will need to create the respective directories for user level service,
 meaning these services will only start when user is ready.  
 
+**Create Directories**  
 ```bash
-# Create directories
 mkdir ~/.config/systemd/user/ -p
 ```
 
-Now, add a file and poputate the content!  
+**Add Service File**  
 
 ```bash
 # You can use nano if vim is not something you are familiar with.
@@ -73,36 +73,41 @@ WantedBy=default.target
 ```
 
 
-Here I set jupyterlan to start from the documents directory,
+Here, I set jupyterlab to start from the documents directory,
 if you want it to start from somewhere else, please change it by all means.
 I used port 7777 so that if you start your own jupyterlab it will be able
 to use the default 8888 port. Anyways, we still got a few steps left, let's
 continue on.  
 
 
-Reload user level service.  
+**Reload User Level Service**  
+
 ```bash
 systemctl --user daemon-reload
 ```
 
-Enable jupyterlan service to start on boot.  
+**Enable Jupyterlab Service**  
 
 ```bash
 systemctl --user enable jupyter_notebook.service
 ```
 
-And now, let start it! Of course, you want to use it right away!  
+**Start The Service**  
+
+Well, you will only need to do this once, since it has been enabled to 
+start this service after reboot.
 
 ```bash
 systemctl --user start jupyter_notebook.service
 ```
+
+## All Done
 
 To validate whether the service has been run succesfully, you can run:  
 
 ```bash
 systemctl --user status jupyter_notebook.service
 ```
-
 
 Well, congratulations! You made it to the end of the article, hopefully it
 was a helpful journey. And this is a super fast way to start your service
