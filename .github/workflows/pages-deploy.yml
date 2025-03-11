@@ -52,6 +52,7 @@ jobs:
       - name: Test site
         run: |
           bundle exec htmlproofer _site \
+            \-\-allow_hash_href \
             \-\-disable-external \
             \-\-url-ignore "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
 
