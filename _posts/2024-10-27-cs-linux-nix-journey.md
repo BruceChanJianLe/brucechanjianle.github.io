@@ -6,7 +6,10 @@ categories: [CS]
 tags: [cs, linux]
 ---
 
-> Let's dive into using Nix for development!
+> After hearing about Nix OS, it seems like an interesting thing to look into.
+> However, I am not currently ready to leave Ubuntu at the moment.
+> Hence, here are my notes on using Nix on Ubuntu.
+
 
 ## Installation
 
