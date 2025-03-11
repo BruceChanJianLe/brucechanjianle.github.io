@@ -107,7 +107,7 @@ Add this line to it..
 experimental-features = nix-command flakes
 ```
 
-## Installing Packages
+## The Package Manager You Want
 
 You can use `nix-env` as a package manager to install
 some unavailable packages on your distro, for example,
