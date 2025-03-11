@@ -11,50 +11,68 @@ tags: [cs, linux]
 > Hence, here are my notes on using Nix on Ubuntu.
 
 
-## Installation
+## Installation of Nix
 
 Using official installation steps: https://nixos.org/download/#nix-install-linux
 
 
-What the script would do:
-
-- make sure your computer doesn't already have Nix files
- (if it does, I will tell you how to clean them up.)
-- create local users (see the list above for the users I'll make)
-- create a local group (nixbld)
-- install Nix in /nix
-- create a configuration file in /etc/nix
-- set up the "default profile" by creating some Nix-related files in
- /root
-- back up /etc/bash.bashrc to /etc/bash.bashrc.backup-before-nix
-- update /etc/bash.bashrc to include some Nix configuration
-- back up /etc/zsh/zshrc to /etc/zsh/zshrc.backup-before-nix
-- update /etc/zsh/zshrc to include some Nix configuration
-- load and start a service (at /etc/systemd/system/nix-daemon.service
- and /etc/systemd/system/nix-daemon.socket) for nix-daemon
+> What the script would do:
+> 
+> - make sure your computer doesn't already have Nix files
+>  (if it does, I will tell you how to clean them up.)
+> - create local users (see the list above for the users I'll make)
+> - create a local group (nixbld)
+> - install Nix in /nix
+> - create a configuration file in /etc/nix
+> - set up the "default profile" by creating some Nix-related files in
+>  /root
+> - back up /etc/bash.bashrc to /etc/bash.bashrc.backup-before-nix
+> - update /etc/bash.bashrc to include some Nix configuration
+> - back up /etc/zsh/zshrc to /etc/zsh/zshrc.backup-before-nix
+> - update /etc/zsh/zshrc to include some Nix configuration
+> - load and start a service (at /etc/systemd/system/nix-daemon.service
+>  and /etc/systemd/system/nix-daemon.socket) for nix-daemon
 
 
 The script is quite intuitive, just read through the prompt carefully,
 and response as required.
 
 
-If you want a quick way, you can checkout my the below command:
+If you want a quick way, you can use my ansible script with the command below:
 
 ```bash
 ansible-pull https://github.com/BruceChanJianLe/ansible-nix.git -K
 ```
 
-Unistalling
+## Unistalling Nix
 
+This is for multi-user nix, which is the recommended one, likely yours would
+be this as well.  
 ```bash
-# Delete the Nix store (and misc. Nix-related files) as root
-sudo rm -rf /nix/
-# Delete the Nix configuration file as root
-sudo rm -rf /etc/nix
-# Delete your user links as normal user
-sudo rm -rf ~/.nix-channels ~/.nix-defexpr ~/.nix-profile
+# Remove Nix daemon service
+sudo systemctl stop nix-daemon.service
+sudo systemctl disable nix-daemon.socket nix-daemon.service
+sudo systemctl daemon-reload
+
+# Remove files created by Nix:
+sudo rm -rf /etc/nix /etc/profile.d/nix.sh /etc/tmpfiles.d/nix-daemon.conf /nix ~root/.nix-channels ~root/.nix-defexpr ~root/.nix-profile
+
+# Remove build users and their groups
+for i in $(seq 1 32); do
+  sudo userdel nixbld$i
+done
+sudo groupdel nixbld
 ```
-link: https://nix-tutorial.gitlabpages.inria.fr/nix-tutorial/installation.html
+
+Other places where you may want to clean up:
+- `/etc/bash.bashrc`
+- `/etc/bashrc`
+- `/etc/profile`
+- `/etc/zsh/zshrc`
+- `/etc/zshrc`
+
+
+link: https://nix.dev/manual/nix/2.18/installation/uninstall
 
 
 ## Setting Up Experimental Feature
