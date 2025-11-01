@@ -144,12 +144,12 @@ like having an aptfile you can share with future-you.
 Home Manager is surprisingly deep. Here are some highlights of its
 advanced yet practical capabilities:
 
-1. Version-controlled Configs
+**1. Version-controlled Configs**
 
 Your entire environment is just code, well Nix code, you can commit it to Git
 and reproduce it anywhere with one command.  
 
-2. Dotfile Management
+**2. Dotfile Management**
 
 No need for symlink farms (stow, chezmoi, etc.). Home Manager directly manages
 files in home.file.<path>:
@@ -160,19 +160,19 @@ home.file.".config/nvim/init.vim".source = ./dotfiles/init.vim;
 
 Of course, I am still on the fence for this one!  
 
-3. Program Modules
+**3. Program Modules**
 
 Home Manager has modules for many common programs: `zsh`, `starship`, `tmux`,
 `alacritty`, `neovim`, `vscode`, and more, all declaratively configurable.
 However, for those that are not in the list, you will have to either do a pull
 request or wait for the maintainers to get there.  
 
-4. Per-User Profiles
+**4. Per-User Profiles**
 
 Different users on the same system can each have their own
 reproducible environments.
 
-5. Seamless Nix Flake Integration
+**5. Seamless Nix Flake Integration**
 
 For more advanced setups, integrate with flakes for fully reproducible, version-pinned configs:
 
@@ -189,7 +189,7 @@ Then update it anywhere with:
 nix run .#homeConfigurations.bruce.activationPackage
 ```
 
-6. Automatic Rollbacks
+**6. Automatic Rollbacks**
 
 Home Manager keeps generations, so if something breaks, just roll back:
 
