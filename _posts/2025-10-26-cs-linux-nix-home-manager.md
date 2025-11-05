@@ -37,6 +37,21 @@ The above command will create a `home-manager` directory under your
 [`$XDG_CONFIG_HOME`](https://specifications.freedesktop.org/basedir-spec/latest/)
 which is usually the `.config` directory.  
 
+If you already have your Home Manager config, like I do! Then you can just
+run the following command:  
+
+```bash
+nix run home-manager -- switch
+```
+
+For those who have more than one user configurations, your command will be
+a little different:  
+
+```bash
+nix run home-manager -- switch --flake ~/.config/home-manager#user1
+nix run home-manager -- switch --flake ~/.config/home-manager#user2
+```
+
 ## Managing Packages
 
 Edit the `home.nix` file and update the `home.packages` session. This file can
