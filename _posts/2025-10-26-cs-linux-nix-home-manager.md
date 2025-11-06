@@ -150,7 +150,7 @@ a little flavor of different users.
 If you want to have the latest and greatest reference, simply check out the
 [link](https://github.com/BruceChanJianLe/dotfiles/tree/master/.config/home-manager)!
 But for the impatience, you can simply refer to the `flake.nix`, `common.nix`
-and `user1.nix`.  
+and `user1.nix` files below.  
 
 ### flake.nix 
 
