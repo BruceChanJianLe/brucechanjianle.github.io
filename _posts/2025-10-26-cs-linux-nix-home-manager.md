@@ -152,7 +152,8 @@ If you want to have the latest and greatest reference, simply check out the
 But for the impatience, you can simply refer to the `flake.nix`, `common.nix`
 and `user1.nix`.  
 
-**flake.nix**  
+### flake.nix 
+
 ```nix
 {
   description = "Home Manager configuration of dev";
@@ -199,7 +200,8 @@ and `user1.nix`.
 }
 ```
 
-**common.nix**  
+### common.nix
+
 ```nix
 { config, pkgs, ... }:
 
@@ -215,7 +217,8 @@ and `user1.nix`.
 }
 ```
 
-**user1.nix**  
+### user1.nix
+
 ```nix
 { config, pkgs, ... }:
 
