@@ -56,10 +56,10 @@ That’s it!
 With just two commands, you’ll have `ansible` take care of installing essential
 software and setting up all your configuration files.
 
-I use `ansible` to automate the entire environment setup process — it ensures
+I use `ansible` to automate the entire environment setup process, it ensures
 that every tool, dependency, and configuration lands exactly where it should.
 However, for this post, our main focus isn’t on `ansible` itself, but on how
-to track and version-control your configuration files — your dotfiles.  
+to track and version-control your configuration files - your dotfiles.  
 
 We’ll save the detailed on `ansible` for another time.  
 
@@ -129,4 +129,4 @@ is the same: make your environment portable, consistent, and yours.
 So take the time to version your dotfiles, in turn, your future self
 (and every new laptop) will thank you.  
 
-Keep learning and stay curious!  
+Until then, keep learning and stay curious!  
