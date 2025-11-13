@@ -278,7 +278,7 @@ You should see the following prompt when you enter jupyterlab! But once you
 have key in you do not need to re-authenticate yourself, unless, you come in
 from a new browser.  
 
-[!image](../resources/2025-11-12-cs-remote-jupyterlab-with-tailscale/jupyterlab_login.png)
+![image](../resources/2025-11-12-cs-remote-jupyterlab-with-tailscale/jupyterlab_login.png)
 
 ## Well Done
 
