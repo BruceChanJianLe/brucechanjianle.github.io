@@ -1,5 +1,5 @@
 ---
-title: Remote Jupyterlab with tailscale
+title: Remote Jupyterlab with Tailscale
 author: cjl
 date: 2025-11-12 14:11:04 +0800
 categories: [CS]
@@ -291,9 +291,9 @@ systemctl --user status tailscale_jupyter_notebook.service
 
 If both show as active (running) then congratulations!  
 
-Well, give yourself a hand! You made it so far, hopefully this is as helpful to
-you as it was for me. And with this you now have a secure, remote-access
+Well, give yourself a hand! You've made it so far, hopefully this is as helpful
+to you as it was for me. And with this you now have a secure, remote-access
 JupyterLab instance running on your powerful desktop, accessible from anywhere
 in the globe through Tailscale.  
 
-Until next time — keep learning and keep building!  
+Until next time, keep learning and keep building!  
