@@ -5,13 +5,14 @@ a field that I did not get a chance to explore or understand.
 
 What are the quantitative trading companies in Singapore:
 
-1. Hudson River Trading
-1. Towel Reserach Capital
-1. Jump Trading
-1. WorldQuant
-1. DWR Trading Group
+1. Hudson River Trading (no good openings)
+1. Tower Research Capital (has c++ opportunities)
+1. Jump Trading (has c++ opportunities, however, requires knowledge market order execution)
+1. WorldQuant (has a quantitative developer - AI implementation)
+1. DWR Trading Group (has c++ opportuniteis, however, requires 4 yrs exp in trading industry)
 1. Graviton Research Capital LLP
 1. XTX Markets (not in singapore)
+1. Grasshoper (Software Engineer C++)
 
 Responsibility:
 - Design, develop, and maintain high-performance C++ trading applications.
