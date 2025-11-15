@@ -238,3 +238,33 @@ Some Benefits in this market:
 - Rapid career progression and exposure to diverse technologies.
 - Collaboration with top-tier infrastructure teams in the financial sector.
 
+Tower Research Capital (Software Developer C++)
+
+Responsibilities:
+- Designing and implementing a high-frequency trading platform, which includes collecting
+  quotes and trades from and disseminating orders to exchanges around the world
+- Optimizing this platform by using network and systems programming, as well as other advanced techniques to minimize latency
+- Developing systems that provide easy access to historical market data and trading simulations
+- Creating tools to analyze data for patterns
+- Building risk-management and performance-tracking tools
+
+Qualifications:
+- A degree in computer science or a related field
+- At least 5+ years of experience with C++ development, preferably in a trading environment
+- A strong background in data structures, algorithms, and object-oriented programming in C++
+- Brilliant problem-solving abilities
+- The ability to manage multiple tasks in a fast-paced environment
+- Strong communication skills in English for business purposes
+- Good understanding of Linux operating system and Networking (TCP/IP and UDP) is a plus
+- Knowledge of Python and shell scripts is a plus
+
+Our benefits include:
+- Generous paid time off policies
+- Savings plans and other financial wellness tools available in each region
+- Hybrid working opportunities
+- Free breakfast, lunch and snacks daily 
+- In-office wellness experiences and reimbursement for select wellness expenses (e.g., gym, personal training and more) 
+- Company-sponsored sports teams and fitness events (JPM Corporate Challenge, Cycle for Survival, Wall Street Rides FAR and more)
+- Volunteer opportunities and charitable giving 
+- Social events, happy hours, treats and celebrations throughout the year
+- Workshops and continuous learning opportunities
