@@ -11,7 +11,7 @@ What are the quantitative trading companies in Singapore:
 1. WorldQuant
 1. DWR Trading Group
 1. Graviton Research Capital LLP
-1. XTX Markets
+1. XTX Markets (not in singapore)
 
 Responsibility:
 - Design, develop, and maintain high-performance C++ trading applications.
