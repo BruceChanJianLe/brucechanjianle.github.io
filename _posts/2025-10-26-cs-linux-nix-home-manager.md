@@ -88,6 +88,60 @@ keywords as well as to tell it to exclue plugin, like the example below:
 nix search nixpkgs htop vim -e "plugin"
 ```
 
+## Updatig Packages
+
+Over time, you may notice that certain packages listed on 
+https://search.nixos.org/packages are newer than the ones available in your
+current setup. For example, the `pixi` package might be at version **0.46.0**
+on the `nixpkgs` **25.05** channel, while the **25.11** channel already provides
+version **0.59.0**.  
+
+To upgrade to newer package versions, you need to update your Home Manager
+config  to track the newer `nixpkgs` release. Here's how to do it.  
+
+1. Update `home.stateVersion`
+
+The first step is to update the `home.stateVersion` in your Home Manager config.
+This setting lives in:  
+
+```bash
+cd $HOME/.config/home-manager/home.nix
+```
+
+Adjust it to point to the newer release channel:  
+
+```nix
+  home.stateVersion = "25.11";
+```
+
+2. Update Flake Inputs
+
+Since we are using a flake-based Home Manager config, we can update the
+pinned `nixpkgs` version just like any flake project. In the same directory
+where the `home.nix` is found, run:
+
+```bash
+nix flake update
+```
+
+If you track your `flake.lock` file in version control, you’ll see that it has
+been updated to reference the latest revision of the channel.  
+
+3. Apply the Updated Configuration
+
+Now that your flake inputs are updated and your `stateVersion` is aligned,
+apply your new environment by running:  
+
+```bash
+home-manager switch
+```
+
+Home Manager will rebuild your environment using the updated packages and configuration.
+
+That’s it! With those steps, your system is now using the latest package
+versions from the updated `nixpkgs` channel. Using flakes makes this process
+clean, reproducible, and version-controlled.  
+
 ## Managing Dotfiles
 
 ```nix
