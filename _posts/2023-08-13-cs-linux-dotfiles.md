@@ -117,6 +117,15 @@ exclude sensitive credentials (like SSH keys or tokens) from your tracked files.
 Consider using `.gitignore`, [Git Hooks](https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks),
 or encryption tools like `ansible-vault` or `git-crypt` for added safety.
 
+## Updating Your Dotfiles
+
+If you have made changes on another computer and decided to push it, you just
+need to do a git pull! And probably the git resolve conflicts if there are any.  
+
+```bash
+config pull --recurse-submodules
+```
+
 ## Closing Remarks
 
 Managing your dotfiles may seem like a small thing, but it’s one of the most
