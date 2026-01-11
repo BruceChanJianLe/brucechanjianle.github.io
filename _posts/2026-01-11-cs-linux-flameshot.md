@@ -10,13 +10,15 @@ tags: [cs, linux, python]
 > or quick sharing - Flameshot is one of those tools that quietly becomes indispensable
 > once you start using it.
 
+![Image](https://github.com/user-attachments/assets/d1621fc2-1cb6-40a1-b43c-f9e9896a373c)
+
 Flameshot is a free, open-source screenshot utility best known in the Linux community,
 but also available on Windows and macOS. At its core, it does one thing extremely well:
 it lets you capture screenshots quickly, then edit and annotate them instantly, without
 jumping between multiple apps.
 
 There are plenty of videos out there explaining the benefits of Flameshot, so
-I’ll simply leave a link here for you to check out: [intro](https://youtu.be/zavmtaqMY_A?t=228).
+I’ll simply leave a link here for you to check out [link](https://youtu.be/zavmtaqMY_A?t=228).
 The goal of this article is to help you get Flameshot up and running on your
 Ubuntu machine, specifically Ubuntu 24.04, which is the latest version at the
 time of writing.
