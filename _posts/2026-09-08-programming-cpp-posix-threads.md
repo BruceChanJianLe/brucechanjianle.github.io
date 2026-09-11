@@ -1,5 +1,5 @@
 ---
-title: POSIX Threads (where they came from, and whether you still need them)
+title: POSIX Threads
 author: Chan Jian Le
 date: 2026-09-08 23:15:00 +0800
 categories: [Programming]
